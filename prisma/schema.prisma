@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+enum CategoryProps {
+  Sedan
+  Hatch
+  Eletrico
+  Picape
+  Hibrido
+  OffRoad
+  SUV
+  Crossover
+  Perua
+  MiniVan
+  Esportivo
+  Furgao
+  Jipe
+  AventureiroCompacto
+  HatchSubcompacto
+  HatchCompacto
+  HatchMedio
+  SedanCompacto
+  SedanMedio
+  SedanGrande
+  FamiliarCompacto
+  FamiliarMedio
+  FamiliarGrande
+  PicapeCompacta
+  PicapeMedio
+  PicapeGrande
+  SUVCompacto
+  SUVMedio
+  SUVGrande
+  EsportivoCompacto
+  EsportivoMedio
+  EsportivoGrande
+  ConversivelCompacto
+  ConversivelMedio
+  ConversivelGrande
+  VanMedio
+  VanGrande
+  FurgaoCompacto
+  FurgaoMedio
+  CaminhaoUrbano
+}
+
+enum BrandProps {
+  Toyota
+  Honda
+  Volkswagen
+  Hyundai
+  Fiat
+  Caoa_Chery
+  Bmw
+  Renautlt
+  Jeep
+  Ram
+  Nissan
+  Peugeot
+  Chevrolet
+  Jac
+  Land_Rover
+  Mercedes
+  Mitsubishi
+  Volvo
+  Rolls_Royce
+  Subaru
+  Porsche
+  Suzuki
+  Mercedes_AMG
+  Lexus
+  Kia
+  Maserati
+  Mini
+  MCLaren
+  Jaguar
+  Haval
+  Audi
+  Citroen
+  Ford
+  Aston_Martin
+}
+
+model Car {
+  id                String     @id @default(uuid())
+  linkImg           String
+  name              String
+  ownerOfTheProduct String
+  description       String
+  cor               String
+  Cambio            String
+  vehicleItems      String
+  kmRounds          String
+  Combustivel       String
+  Year              String
+  AceitaTroca       String
+  Whatsapp          String
+  category          Category   @relation(fields: [categoryId], references: [id])
+  categoryId        String
+  brand             Brand      @relation(fields: [brandId], references: [id])
+  brandId           String
+}
+
+model Category {
+  id        String          @id @default(uuid())
+  categoria CategoryProps[]
+  cars      Car[]
+}
+
+model Brand {
+  id    String       @id @default(uuid())
+  brand BrandProps[]
+  cars  Car[]
+}
