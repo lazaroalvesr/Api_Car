@@ -3,15 +3,15 @@ import { prisma } from "../prisma/prisma";
 
 // Mapeamento dos nomes das categorias para os IDs correspondentes
 const categoryMap: Record<string, string> = {
-  Hatches: "8bdd23dc-07fe-458d-b06f-edd09122325b",
-  Picapes: "08dae866-3826-4063-b17f-22298bcd21d7",
+  Hatchs: "8bdd23dc-07fe-458d-b06f-edd09122325b",
+  Picape: "08dae866-3826-4063-b17f-22298bcd21d7",
   Sedan: "e8708311-0184-40cf-b91b-9d50440e49c0",
-  SUVs: "1fea174e-6acd-444d-a057-02eca8e326f7",
-  Carros_Eletricos: "2f890d9e-bea6-4552-a0f1-581eaa0f4689",
-  Carros_economicos: "c76d9467-4834-4fe3-b97a-bd2952295f1f",
-  Carros_para_Familia: "bceb2b49-78d0-4bdb-8c25-b78d47ded5ac",
-  Carros_a_Diesel: "6c6707aa-4737-4f4b-90ac-766448133af8",
-  Carros_de_Luxo: "30da0d55-3762-4ea6-8cab-49627c138415",
+  SUV: "1fea174e-6acd-444d-a057-02eca8e326f7",
+  Carro_Eletrico: "2f890d9e-bea6-4552-a0f1-581eaa0f4689",
+  Carro_economico: "c76d9467-4834-4fe3-b97a-bd2952295f1f",
+  Carro_para_Familia: "bceb2b49-78d0-4bdb-8c25-b78d47ded5ac",
+  Carro_a_Diesel: "6c6707aa-4737-4f4b-90ac-766448133af8",
+  Carro_de_Luxo: "30da0d55-3762-4ea6-8cab-49627c138415",
 };
 
 // Mapeamento dos nomes das marcas para os IDs correspondentes

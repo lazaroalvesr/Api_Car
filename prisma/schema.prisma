@@ -9,15 +9,15 @@ datasource db {
 }
 
 enum CategoryProps {
-  Hatches
-  Picapes
+  Hatche
+  Picape
   Sedan
-  SUVs
-  Carros_Eletricos
-  Carros_economicos
-  Carros_para_Familia
-  Carros_a_Diesel
-  Carros_de_Luxo
+  SUV
+  Carro_Eletrico
+  Carro_economico
+  Carro_para_Familia
+  Carro_a_Diesel
+  Carro_de_Luxo
 }
 
 enum BrandProps {

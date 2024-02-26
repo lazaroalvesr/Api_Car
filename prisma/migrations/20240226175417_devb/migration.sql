@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "CategoryProps" AS ENUM ('Hatches', 'Picapes', 'Sedan', 'SUVs', 'Carros_Eletricos', 'Carros_economicos', 'Carros_para_Familia', 'Carros_a_Diesel', 'Carros_de_Luxo');
+CREATE TYPE "CategoryProps" AS ENUM ('Hatche', 'Picape', 'Sedan', 'SUV', 'Carro_Eletrico', 'Carro_economico', 'Carro_para_Familia', 'Carro_a_Diesel', 'Carro_de_Luxo');
 
 -- CreateEnum
 CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Fiat', 'Caoa_Chery', 'Byd', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
@@ -12,9 +12,6 @@ CREATE TYPE "CombustivelEnun" AS ENUM ('Gasolina', 'Alcool', 'Diesel', 'Eletrico
 
 -- CreateEnum
 CREATE TYPE "Select" AS ENUM ('Sim', 'Nao');
-
--- CreateEnum
-CREATE TYPE "Carro" AS ENUM ('Novo', 'Usado');
 
 -- CreateTable
 CREATE TABLE "Car" (
