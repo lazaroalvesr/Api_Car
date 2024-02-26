@@ -59,6 +59,7 @@ enum BrandProps {
 }
 
 enum CambioEnun {
+  CVT
   Automatico
   Manual
 }
