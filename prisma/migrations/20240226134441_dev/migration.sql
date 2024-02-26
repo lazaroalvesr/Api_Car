@@ -1,8 +1,8 @@
 -- CreateEnum
-CREATE TYPE "CategoryProps" AS ENUM ('Sedan', 'Hatch', 'Eletrico', 'Picape', 'Hibrido', 'OffRoad', 'SUV', 'Crossover', 'Perua', 'MiniVan', 'Esportivo', 'Furgao', 'Jipe', 'AventureiroCompacto', 'HatchSubcompacto', 'HatchCompacto', 'HatchMedio', 'SedanCompacto', 'SedanMedio', 'SedanGrande', 'FamiliarCompacto', 'FamiliarMedio', 'FamiliarGrande', 'PicapeCompacta', 'PicapeMedio', 'PicapeGrande', 'SUVCompacto', 'SUVMedio', 'SUVGrande', 'EsportivoCompacto', 'EsportivoMedio', 'EsportivoGrande', 'ConversivelCompacto', 'ConversivelMedio', 'ConversivelGrande', 'VanMedio', 'VanGrande', 'FurgaoCompacto', 'FurgaoMedio', 'CaminhaoUrbano');
+CREATE TYPE "CategoryProps" AS ENUM ('Hatches', 'Picapes', 'Sedan', 'SUVs', 'Carros_Eletricos', 'Carros_economicos', 'Carros_para_Familia', 'Carros_a_Diesel', 'Carros_de_Luxo');
 
 -- CreateEnum
-CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Fiat', 'Caoa_Chery', 'Bmw', 'Renautlt', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
+CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Fiat', 'Caoa_Chery', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
 
 -- CreateTable
 CREATE TABLE "Car" (
@@ -10,6 +10,7 @@ CREATE TABLE "Car" (
     "linkImg" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "ownerOfTheProduct" TEXT NOT NULL,
+    "model" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "cor" TEXT NOT NULL,
     "Cambio" TEXT NOT NULL,
@@ -17,6 +18,7 @@ CREATE TABLE "Car" (
     "kmRounds" TEXT NOT NULL,
     "Combustivel" TEXT NOT NULL,
     "Year" TEXT NOT NULL,
+    "Price" TEXT NOT NULL,
     "AceitaTroca" TEXT NOT NULL,
     "Whatsapp" TEXT NOT NULL,
     "categoryId" TEXT NOT NULL,

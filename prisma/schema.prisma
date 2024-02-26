@@ -9,46 +9,15 @@ datasource db {
 }
 
 enum CategoryProps {
+  Hatches
+  Picapes
   Sedan
-  Hatch
-  Eletrico
-  Picape
-  Hibrido
-  OffRoad
-  SUV
-  Crossover
-  Perua
-  MiniVan
-  Esportivo
-  Furgao
-  Jipe
-  AventureiroCompacto
-  HatchSubcompacto
-  HatchCompacto
-  HatchMedio
-  SedanCompacto
-  SedanMedio
-  SedanGrande
-  FamiliarCompacto
-  FamiliarMedio
-  FamiliarGrande
-  PicapeCompacta
-  PicapeMedio
-  PicapeGrande
-  SUVCompacto
-  SUVMedio
-  SUVGrande
-  EsportivoCompacto
-  EsportivoMedio
-  EsportivoGrande
-  ConversivelCompacto
-  ConversivelMedio
-  ConversivelGrande
-  VanMedio
-  VanGrande
-  FurgaoCompacto
-  FurgaoMedio
-  CaminhaoUrbano
+  SUVs
+  Carros_Eletricos
+  Carros_economicos
+  Carros_para_Familia
+  Carros_a_Diesel
+  Carros_de_Luxo
 }
 
 enum BrandProps {
@@ -59,7 +28,7 @@ enum BrandProps {
   Fiat
   Caoa_Chery
   Bmw
-  Renautlt
+  Renault
   Jeep
   Ram
   Nissan
