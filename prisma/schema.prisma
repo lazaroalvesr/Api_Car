@@ -24,6 +24,7 @@ enum BrandProps {
   Honda
   Volkswagen
   Hyundai
+  Tesla
   Fiat
   Caoa_Chery
   Byd
@@ -88,8 +89,8 @@ model Car {
   category            Category          @relation(fields: [categoryId], references: [id])
   brand               Brand             @relation(fields: [brandId], references: [id])
   Combustivel         CombustivelEnun[]
-  FinalDaPlaca        String
-  cor                 String
+  FinalDaPlaca        String?
+  cor                 String?
   AceitaTroca         Select[]
   Garantia_De_Fabrica Select[]
   Price               String
