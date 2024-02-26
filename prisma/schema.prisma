@@ -27,6 +27,7 @@ enum BrandProps {
   Hyundai
   Fiat
   Caoa_Chery
+  Byd
   Bmw
   Renault
   Jeep
@@ -57,26 +58,47 @@ enum BrandProps {
   Aston_Martin
 }
 
+enum CambioEnun {
+  Automatico
+  Manual
+}
+
+enum CombustivelEnun {
+  Gasolina
+  Alcool
+  Diesel
+  Eletrico
+  Hibrido
+}
+
+enum Select {
+  Sim
+  Nao
+}
+
 model Car {
-  id                String   @id @default(uuid())
-  linkImg           String
-  name              String
-  ownerOfTheProduct String
-  model             String
-  description       String
-  cor               String
-  Cambio            String
-  vehicleItems      String
-  kmRounds          String
-  Combustivel       String
-  Year              String
-  Price             String
-  AceitaTroca       String
-  Whatsapp          String
-  category          Category @relation(fields: [categoryId], references: [id])
-  categoryId        String
-  brand             Brand    @relation(fields: [brandId], references: [id])
-  brandId           String
+  id                  String            @id @default(uuid())
+  linkImg             String
+  name                String
+  model               String
+  City                String
+  description         String?
+  Year                String
+  kmRounds            String
+  Cambio              CambioEnun[]
+  category            Category          @relation(fields: [categoryId], references: [id])
+  brand               Brand             @relation(fields: [brandId], references: [id])
+  Combustivel         CombustivelEnun[]
+  FinalDaPlaca        String
+  cor                 String
+  AceitaTroca         Select[]
+  Garantia_De_Fabrica Select[]
+  Price               String
+  vehicleItems        String
+  NomeDoVendedor      String
+  Whatsapp            String
+  categoryId          String
+  brandId             String
 }
 
 model Category {

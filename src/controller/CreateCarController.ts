@@ -1,5 +1,6 @@
 import { FastifyReply, FastifyRequest } from "fastify";
 import CreateCarService from "../service/CreateCarService";
+import { CambioEnun, CombustivelEnun, Select } from "@prisma/client";
 
 class CreateCarController {
   async handle(req: FastifyRequest, rep: FastifyReply) {
@@ -7,38 +8,42 @@ class CreateCarController {
       linkImg,
       name,
       model,
+      City,
       description,
-      kmRounds,
-      AceitaTroca,
-      Cambio,
-      Combustivel,
-      cor,
-      ownerOfTheProduct,
-      vehicleItems,
       Year,
-      Price,
-      Models,
-      Whatsapp,
+      kmRounds,
+      Cambio,
       categoryName,
-      brandName, // Alterado de brandId para brandName
+      brandName,
+      Combustivel,
+      FinalDaPlaca,
+      cor,
+      AceitaTroca,
+      Garantia_De_Fabrica,
+      Price,
+      vehicleItems,
+      NomeDoVendedor,
+      Whatsapp,
     } = req.body as {
       linkImg: string;
       name: string;
       model: string;
-      AceitaTroca: string;
-      Cambio: string;
-      Combustivel: string;
-      cor: string;
-      ownerOfTheProduct: string;
-      vehicleItems: string;
+      City: string;
       description: string;
-      kmRounds: string;
       Year: string;
-      Price: string
-      Models: string;
-      Whatsapp: string;
+      kmRounds: string;
+      Cambio: CambioEnun[];
       categoryName: string;
-      brandName: string; // Alterado de brandId para brandName
+      brandName: string;
+      Combustivel: CombustivelEnun[];
+      FinalDaPlaca: string;
+      cor: string;
+      AceitaTroca: Select[];
+      Garantia_De_Fabrica: string[];
+      Price: string;
+      vehicleItems: string;
+      NomeDoVendedor: string;
+      Whatsapp: string;
     };
 
     const create = new CreateCarService();
@@ -46,19 +51,22 @@ class CreateCarController {
       linkImg,
       name,
       model,
-      AceitaTroca,
+      City,
       description,
-      Cambio,
-      Combustivel,
-      cor,
-      ownerOfTheProduct,
-      vehicleItems,
-      kmRounds,
       Year,
-      Price,
-      Whatsapp,
+      kmRounds,
+      Cambio,
       categoryName,
       brandName,
+      Combustivel,
+      FinalDaPlaca,
+      cor,
+      AceitaTroca,
+      Garantia_De_Fabrica,
+      Price,
+      vehicleItems,
+      NomeDoVendedor,
+      Whatsapp,
     });
 
     rep.send(createCar);

@@ -1,54 +1,56 @@
+import { CambioEnun, CombustivelEnun, Select } from "@prisma/client";
 import { prisma } from "../prisma/prisma";
 
 // Mapeamento dos nomes das categorias para os IDs correspondentes
 const categoryMap: Record<string, string> = {
-  Hatches: "b950cdda-5042-4b7c-80ff-9a7fe7b25916",
-  Picapes: "90a545e6-0975-405b-a0ab-ef5aa49523cc	",
-  Sedan: "820c7b07-2e11-45ea-8ee9-632520dd999e	",
-  SUVs: "45572f4e-6275-4705-ba82-891a74813d89	",
-  Carros_Eletricos: "e0b8645a-2f63-4e4b-b7fc-ca43884ba0c0	",
-  Carros_economicos: "b502029b-bb87-4dfa-8d45-83ba06d26f8e	",
-  Carros_para_Familia: "57cf1eec-7ed7-47cf-9126-a43198a5b6d1	",
-  Carros_a_Diesel: "55b2a70f-9439-4289-8382-5db182c8f6f4	",
-  Carros_de_Luxo: "758ecf92-85f2-4c46-b9d6-d2c5eaa79367	",
+  Hatches: "8bdd23dc-07fe-458d-b06f-edd09122325b",
+  Picapes: "08dae866-3826-4063-b17f-22298bcd21d7",
+  Sedan: "e8708311-0184-40cf-b91b-9d50440e49c0",
+  SUVs: "1fea174e-6acd-444d-a057-02eca8e326f7",
+  Carros_Eletricos: "2f890d9e-bea6-4552-a0f1-581eaa0f4689",
+  Carros_economicos: "c76d9467-4834-4fe3-b97a-bd2952295f1f",
+  Carros_para_Familia: "bceb2b49-78d0-4bdb-8c25-b78d47ded5ac",
+  Carros_a_Diesel: "6c6707aa-4737-4f4b-90ac-766448133af8",
+  Carros_de_Luxo: "30da0d55-3762-4ea6-8cab-49627c138415",
 };
 
 // Mapeamento dos nomes das marcas para os IDs correspondentes
 const brandMap: Record<string, string> = {
-  TOYOTA: "15858ad1-623a-407f-be38-1c56c88569f1",
-  HONDA: "32075df3-531a-4d5a-b872-73f2f41aa1b1",
-  Volkswagen: "565e33e9-ba11-4eed-a818-82529deb114a",
-  HYUNDAI: "5c45e710-a924-4393-9dcf-8db031244f00",
-  FIAT: "87e5d581-dc3c-4193-a1f5-f18c23ac989c",
-  CAOA_Chery: "4b8fc618-e3e8-46e3-8087-c3019bdd2503",
-  BMW: "b4dc33a2-dfac-458c-a493-ef72584844ea",
-  RENAULT: "a6ae78af-7d5b-4a2c-850e-2c2a332a76a9",
-  JEEP: "8204d4c1-e958-4194-98eb-bb064341acc6",
-  RAM: "923ff675-59b1-43f2-9e4c-5053b6fbb7a6	",
-  NISSAN: "22b34715-dec8-4a59-a144-b53f6a55667d",
-  PEUGEOT: "6c51ff2c-a62e-4c72-a6ec-8a12730e9853",
-  CHEVROLET: "9bd0e44e-56e0-498d-b8eb-",
-  JAC: "e9b827b6-3c55-46e7-a5e1-6054eb211de2",
-  LANDROVER: "6604d3c6-c8d0-48e7-9119-afa960ad97ff",
-  MERCEDES: "fbb6a26e-9e7a-4c7b-8135-a3c0b5e1762d",
-  MITSUBISHI: "c33b6e83-6104-4c2f-8856-1ed9c5d2ca72",
-  VOLVO: "28272c5f-23ef-494f-a980-3c33c593315e",
-  ROLLSROYCE: "ff3ea25a-4540-4b77-9fc5-8dc00bbb6995	",
-  SUBARU: "8a1e17a2-bf08-48d2-972b-25a4329d143e",
-  PORSCHE: "67657984-9325-45cd-bb7b-a3b2de3d49c1",
-  SUZUKI: "f6833989-01ed-4cfe-a52c-d651978b936f",
-  MERCEDESAMG: "50b92b88-6631-44e5-ba8f-e5be806853d6",
-  LEXUS: "883834a1-bd08-477e-933e-c94dfbbae71c",
-  KIA: "0b6adf4d-0b1f-4829-88b8-cc4965bf3e57",
-  MASERATI: "5f44d670-1e57-4754-9a86-1aa0696e8c90",
-  MINI: "358dac9d-0315-405a-ae8b-9e72ff78c59f",
-  MCLAREN: "2233b331-dfb8-48c4-bfe7-ab5d145e924d",
-  JAGUAR: "376ce20c-b9da-4a63-83f5-e11b2099b3c2",
-  HAVAL: "c81b173e-9466-4014-87ff-8b4ad9320ca8",
-  AUDI: "a966f7f7-e928-465d-ae5b-aac9831cc14f",
-  CITROEN: "a794a513-8c2c-4acd-8ef0-193e4de3aa80",
-  FORD: "077f3695-2b08-4330-92ae-d08187470bab",
-  ASTONMARTIN: "29c4ff03-808c-4cb4-ae3e-31dd4291cc7a",
+  TOYOTA: "8cf81ba2-f8be-4d02-9899-f828a9d3f74a",
+  HONDA: "0abf4ad8-3be4-49c3-abc2-d67071825884",
+  Volkswagen: "c4a4a54e-167d-4ae3-9c9a-828d1996f6c1",
+  HYUNDAI: "4921eb35-528a-4b65-88f0-e91b64b90534",
+  FIAT: "8b3749c7-36d0-4e82-8f76-5235f069d43c",
+  CAOA_Chery: "e04830e6-1d6f-4c7c-8b71-0f61baf6c42b",
+  BYD: "6a967afd-112d-4a98-b8a7-18f3bd7652d2",
+  BMW: "6087095c-6395-4a9b-a781-7c79a20354d9",
+  RENAULT: "09a70852-1513-4cff-bc65-d02fb3294e72",
+  JEEP: "ac886cca-de61-4e0c-bfac-7655ef770bf1",
+  RAM: "c9bd14a2-a54e-48c8-987a-b1864101e98f",
+  NISSAN: "5bfd4395-34ee-4b76-996d-7396c4bf0c21",
+  PEUGEOT: "45773c7d-e167-45b4-bfae-16c15e975d3c",
+  CHEVROLET: "89c7dc7b-3145-48e7-ad34-8c36f5f60653",
+  JAC: "d43362e6-749c-48dd-8a9d-2673e399f2b3",
+  LANDROVER: "c321756d-174e-4374-aed7-39226814e695",
+  MERCEDES: "214618bc-559a-4217-8eb4-999e10f17c26",
+  MITSUBISHI: "310a0326-49bb-4627-84c3-5d0fe676395a",
+  VOLVO: "d08d6988-d1d1-4f9a-8607-bf8ab5224815",
+  ROLLSROYCE: "d768b20e-476e-4f32-b54b-a8a7adce92d0",
+  SUBARU: "b7200b2d-bf98-42fd-9970-bff573b37258",
+  PORSCHE: "e08fbf72-83b0-4b2f-9e10-49c31a2b1c86",
+  SUZUKI: "47b3ccac-bfa4-456b-9098-01f2245f6cc9",
+  MERCEDESAMG: "acf7791c-bb5e-4239-b213-5bdf1eba360b",
+  LEXUS: "68452efc-b2f6-4d60-bdcb-fafcf74aeb57",
+  KIA: "474a1720-2f1a-45bb-9314-85ea78eb158e",
+  MASERATI: "17754f0a-3c2b-4fa0-859d-7437530386de",
+  MINI: "1bb9f98b-f061-44ff-be8d-586df999378b",
+  MCLAREN: "8fcda7e5-dd4d-4a86-ac8c-bdee3b13c153",
+  JAGUAR: "133d0197-e618-4953-b747-bd69cb4dda70",
+  HAVAL: "c475af8e-b6ee-486a-a338-0cba93773ab0",
+  AUDI: "2af699b3-70f3-4047-b632-c3ebaad0673b	",
+  CITROEN: "b54aab16-c67f-410f-a928-5359c16bb1d3",
+  FORD: "db0d3a12-36d2-45ea-8d20-b321545e9e1c	",
+  ASTONMARTIN: "ea0a27a1-f597-43a0-ac5f-602fc326838e",
 };
 
 const getCategoryByName = async (categoryName: string) => {
@@ -92,19 +94,22 @@ interface CreateCarProps {
   linkImg: string;
   name: string;
   model: string;
-  ownerOfTheProduct: string;
+  City: string;
   description: string;
-  cor: string;
-  Cambio: string;
-  Combustivel: string;
-  vehicleItems: string;
-  kmRounds: string;
   Year: string;
-  Price: string;
-  AceitaTroca: string;
-  Whatsapp: string;
-  categoryName: string; // Usando string para o nome da categoria
+  kmRounds: string;
+  Cambio: CambioEnun[];
+  categoryName: string;
   brandName: string;
+  Combustivel: CombustivelEnun[];
+  FinalDaPlaca: string;
+  cor: string;
+  AceitaTroca: Select[];
+  Garantia_De_Fabrica: string[];
+  Price: string;
+  vehicleItems: string;
+  NomeDoVendedor: string;
+  Whatsapp: string;
 }
 
 class CreateCarService {
@@ -112,19 +117,22 @@ class CreateCarService {
     linkImg,
     name,
     model,
-    ownerOfTheProduct,
+    City,
     description,
-    kmRounds,
-    cor,
-    Cambio,
-    Combustivel,
-    Price,
-    vehicleItems,
     Year,
-    AceitaTroca,
-    Whatsapp,
+    kmRounds,
+    Cambio,
     categoryName,
     brandName,
+    Combustivel,
+    FinalDaPlaca,
+    cor,
+    AceitaTroca,
+    Garantia_De_Fabrica,
+    Price,
+    vehicleItems,
+    NomeDoVendedor,
+    Whatsapp,
   }: CreateCarProps) {
     try {
       const category = await getCategoryByName(categoryName);
@@ -136,16 +144,19 @@ class CreateCarService {
           linkImg,
           name,
           model,
-          ownerOfTheProduct,
           description,
           cor,
+          vehicleItems,
           Price,
           Cambio,
+          Garantia_De_Fabrica,
           Combustivel,
-          vehicleItems,
           kmRounds,
           Year,
+          City,
+          FinalDaPlaca,
           AceitaTroca,
+          NomeDoVendedor,
           Whatsapp,
           category: { connect: { id: category.id } },
           brand: { connect: { id: brand.id } },

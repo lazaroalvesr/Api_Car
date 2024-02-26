@@ -2,24 +2,39 @@
 CREATE TYPE "CategoryProps" AS ENUM ('Hatches', 'Picapes', 'Sedan', 'SUVs', 'Carros_Eletricos', 'Carros_economicos', 'Carros_para_Familia', 'Carros_a_Diesel', 'Carros_de_Luxo');
 
 -- CreateEnum
-CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Fiat', 'Caoa_Chery', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
+CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Fiat', 'Caoa_Chery', 'Byd', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
+
+-- CreateEnum
+CREATE TYPE "CambioEnun" AS ENUM ('Automatico', 'Manual');
+
+-- CreateEnum
+CREATE TYPE "CombustivelEnun" AS ENUM ('Gasolina', 'Alcool', 'Diesel', 'Eletrico', 'Hibrido');
+
+-- CreateEnum
+CREATE TYPE "Select" AS ENUM ('Sim', 'Nao');
+
+-- CreateEnum
+CREATE TYPE "Carro" AS ENUM ('Novo', 'Usado');
 
 -- CreateTable
 CREATE TABLE "Car" (
     "id" TEXT NOT NULL,
     "linkImg" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "ownerOfTheProduct" TEXT NOT NULL,
     "model" TEXT NOT NULL,
-    "description" TEXT NOT NULL,
-    "cor" TEXT NOT NULL,
-    "Cambio" TEXT NOT NULL,
-    "vehicleItems" TEXT NOT NULL,
-    "kmRounds" TEXT NOT NULL,
-    "Combustivel" TEXT NOT NULL,
+    "City" TEXT NOT NULL,
+    "description" TEXT,
     "Year" TEXT NOT NULL,
+    "kmRounds" TEXT NOT NULL,
+    "Cambio" "CambioEnun"[],
+    "Combustivel" "CombustivelEnun"[],
+    "FinalDaPlaca" TEXT NOT NULL,
+    "cor" TEXT NOT NULL,
+    "AceitaTroca" "Select"[],
+    "Garantia_De_Fabrica" "Select"[],
     "Price" TEXT NOT NULL,
-    "AceitaTroca" TEXT NOT NULL,
+    "vehicleItems" TEXT NOT NULL,
+    "NomeDoVendedor" TEXT NOT NULL,
     "Whatsapp" TEXT NOT NULL,
     "categoryId" TEXT NOT NULL,
     "brandId" TEXT NOT NULL,
