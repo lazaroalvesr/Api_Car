@@ -9,15 +9,14 @@ datasource db {
 }
 
 enum CategoryProps {
-  Hatche
   Picape
   Sedan
   SUV
-  Carro_Eletrico
-  Carro_economico
-  Carro_para_Familia
-  Carro_a_Diesel
-  Carro_de_Luxo
+  Eletrico
+  Hibrido
+  UtilitarioEsportivo
+  Hatchback
+  Van_Utilitario
 }
 
 enum BrandProps {
@@ -64,7 +63,7 @@ enum CambioEnun {
 }
 
 enum CombustivelEnun {
-  Gasolina
+  GasolinaEAlcool
   Alcool
   Diesel
   Eletrico
