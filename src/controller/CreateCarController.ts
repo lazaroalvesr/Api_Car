@@ -20,6 +20,8 @@ class CreateCarController {
       cor,
       AceitaTroca,
       Garantia_De_Fabrica,
+      IPVAPAGO,
+      Licenciado,
       Price,
       vehicleItems,
       NomeDoVendedor,
@@ -40,6 +42,8 @@ class CreateCarController {
       cor: string;
       AceitaTroca: Select[];
       Garantia_De_Fabrica: string[];
+      IPVAPAGO: Select[];
+      Licenciado: Select[];
       Price: string;
       vehicleItems: string;
       NomeDoVendedor: string;
@@ -63,6 +67,8 @@ class CreateCarController {
       cor,
       AceitaTroca,
       Garantia_De_Fabrica,
+      IPVAPAGO,
+      Licenciado,
       Price,
       vehicleItems,
       NomeDoVendedor,

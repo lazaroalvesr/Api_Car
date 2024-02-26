@@ -29,6 +29,8 @@ CREATE TABLE "Car" (
     "cor" TEXT,
     "AceitaTroca" "Select"[],
     "Garantia_De_Fabrica" "Select",
+    "IPVAPAGO" "Select",
+    "Licenciado" "Select",
     "Price" TEXT NOT NULL,
     "vehicleItems" TEXT NOT NULL,
     "NomeDoVendedor" TEXT NOT NULL,

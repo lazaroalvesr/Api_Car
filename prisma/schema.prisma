@@ -94,6 +94,8 @@ model Car {
   cor                 String?
   AceitaTroca         Select[]
   Garantia_De_Fabrica Select?
+  IPVAPAGO            Select?
+  Licenciado          Select?
   Price               String
   vehicleItems        String
   NomeDoVendedor      String
