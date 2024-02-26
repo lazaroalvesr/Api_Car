@@ -64,11 +64,12 @@ enum CambioEnun {
 }
 
 enum CombustivelEnun {
-  GasolinaEAlcool
+  Gasolina_E_Alcool
   Alcool
   Diesel
   Eletrico
   Hibrido
+  Gasolina
 }
 
 enum Select {
@@ -92,7 +93,7 @@ model Car {
   FinalDaPlaca        String?
   cor                 String?
   AceitaTroca         Select[]
-  Garantia_De_Fabrica Select[]
+  Garantia_De_Fabrica Select?
   Price               String
   vehicleItems        String
   NomeDoVendedor      String

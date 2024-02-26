@@ -8,7 +8,7 @@ CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'T
 CREATE TYPE "CambioEnun" AS ENUM ('Automatico', 'Manual');
 
 -- CreateEnum
-CREATE TYPE "CombustivelEnun" AS ENUM ('GasolinaEAlcool', 'Alcool', 'Diesel', 'Eletrico', 'Hibrido');
+CREATE TYPE "CombustivelEnun" AS ENUM ('Gasolina_E_Alcool', 'Alcool', 'Diesel', 'Eletrico', 'Hibrido', 'Gasolina');
 
 -- CreateEnum
 CREATE TYPE "Select" AS ENUM ('Sim', 'Nao');
@@ -28,7 +28,7 @@ CREATE TABLE "Car" (
     "FinalDaPlaca" TEXT,
     "cor" TEXT,
     "AceitaTroca" "Select"[],
-    "Garantia_De_Fabrica" "Select"[],
+    "Garantia_De_Fabrica" "Select",
     "Price" TEXT NOT NULL,
     "vehicleItems" TEXT NOT NULL,
     "NomeDoVendedor" TEXT NOT NULL,
