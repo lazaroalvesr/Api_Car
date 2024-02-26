@@ -92,9 +92,10 @@ model Car {
   Combustivel         CombustivelEnun[]
   FinalDaPlaca        String?
   cor                 String?
+  Blindado            Select?
   AceitaTroca         Select[]
   Garantia_De_Fabrica Select?
-  IPVAPAGO            Select?
+  IPVA_PAGO           Select?
   Licenciado          Select?
   Price               String
   vehicleItems        String

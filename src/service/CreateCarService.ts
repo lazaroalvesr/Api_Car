@@ -101,9 +101,10 @@ interface CreateCarProps {
   Combustivel: CombustivelEnun[];
   FinalDaPlaca: string;
   cor: string;
+  Blindado: Select[]
   AceitaTroca: Select[];
   Garantia_De_Fabrica: string[];
-  IPVAPAGO: Select[];
+  IPVA_PAGO: Select[];
   Licenciado: Select[];
   Price: string;
   vehicleItems: string;
@@ -126,9 +127,10 @@ class CreateCarService {
     Combustivel,
     FinalDaPlaca,
     cor,
+    Blindado,
     AceitaTroca,
     Garantia_De_Fabrica,
-    IPVAPAGO,
+    IPVA_PAGO,
     Licenciado,
     Price,
     vehicleItems,
@@ -147,11 +149,12 @@ class CreateCarService {
           model,
           description,
           cor,
+          Blindado,
           vehicleItems,
           Price,
           Cambio,
           Garantia_De_Fabrica,
-          IPVAPAGO,
+          IPVA_PAGO,
           Licenciado,
           Combustivel,
           kmRounds,

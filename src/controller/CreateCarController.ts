@@ -18,9 +18,10 @@ class CreateCarController {
       Combustivel,
       FinalDaPlaca,
       cor,
+      Blindado,
       AceitaTroca,
       Garantia_De_Fabrica,
-      IPVAPAGO,
+      IPVA_PAGO,
       Licenciado,
       Price,
       vehicleItems,
@@ -40,9 +41,10 @@ class CreateCarController {
       Combustivel: CombustivelEnun[];
       FinalDaPlaca: string;
       cor: string;
+      Blindado: Select[];
       AceitaTroca: Select[];
       Garantia_De_Fabrica: string[];
-      IPVAPAGO: Select[];
+      IPVA_PAGO: Select[];
       Licenciado: Select[];
       Price: string;
       vehicleItems: string;
@@ -65,9 +67,10 @@ class CreateCarController {
       Combustivel,
       FinalDaPlaca,
       cor,
+      Blindado,
       AceitaTroca,
       Garantia_De_Fabrica,
-      IPVAPAGO,
+      IPVA_PAGO,
       Licenciado,
       Price,
       vehicleItems,
