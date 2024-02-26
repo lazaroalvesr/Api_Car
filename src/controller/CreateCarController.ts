@@ -6,6 +6,7 @@ class CreateCarController {
     const {
       linkImg,
       name,
+      model,
       description,
       kmRounds,
       AceitaTroca,
@@ -15,6 +16,7 @@ class CreateCarController {
       ownerOfTheProduct,
       vehicleItems,
       Year,
+      Price,
       Models,
       Whatsapp,
       categoryName,
@@ -22,6 +24,7 @@ class CreateCarController {
     } = req.body as {
       linkImg: string;
       name: string;
+      model: string;
       AceitaTroca: string;
       Cambio: string;
       Combustivel: string;
@@ -31,6 +34,7 @@ class CreateCarController {
       description: string;
       kmRounds: string;
       Year: string;
+      Price: string
       Models: string;
       Whatsapp: string;
       categoryName: string;
@@ -41,6 +45,7 @@ class CreateCarController {
     const createCar = await create.execute({
       linkImg,
       name,
+      model,
       AceitaTroca,
       description,
       Cambio,
@@ -50,7 +55,7 @@ class CreateCarController {
       vehicleItems,
       kmRounds,
       Year,
-      Models,
+      Price,
       Whatsapp,
       categoryName,
       brandName,

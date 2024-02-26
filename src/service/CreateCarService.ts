@@ -122,6 +122,7 @@ const getBrandByName = async (brandName: string) => {
 interface CreateCarProps {
   linkImg: string;
   name: string;
+  model: string;
   ownerOfTheProduct: string;
   description: string;
   cor: string;
@@ -130,7 +131,7 @@ interface CreateCarProps {
   vehicleItems: string;
   kmRounds: string;
   Year: string;
-  Models: string;
+  Price: string;
   AceitaTroca: string;
   Whatsapp: string;
   categoryName: string; // Usando string para o nome da categoria
@@ -141,12 +142,14 @@ class CreateCarService {
   async execute({
     linkImg,
     name,
+    model,
     ownerOfTheProduct,
     description,
     kmRounds,
     cor,
     Cambio,
     Combustivel,
+    Price,
     vehicleItems,
     Year,
     AceitaTroca,
@@ -163,9 +166,11 @@ class CreateCarService {
         data: {
           linkImg,
           name,
+          model,
           ownerOfTheProduct,
           description,
           cor,
+          Price,
           Cambio,
           Combustivel,
           vehicleItems,

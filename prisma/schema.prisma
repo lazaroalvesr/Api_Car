@@ -89,10 +89,11 @@ enum BrandProps {
 }
 
 model Car {
-  id                String     @id @default(uuid())
+  id                String   @id @default(uuid())
   linkImg           String
   name              String
   ownerOfTheProduct String
+  model             String
   description       String
   cor               String
   Cambio            String
@@ -100,11 +101,12 @@ model Car {
   kmRounds          String
   Combustivel       String
   Year              String
+  Price             String
   AceitaTroca       String
   Whatsapp          String
-  category          Category   @relation(fields: [categoryId], references: [id])
+  category          Category @relation(fields: [categoryId], references: [id])
   categoryId        String
-  brand             Brand      @relation(fields: [brandId], references: [id])
+  brand             Brand    @relation(fields: [brandId], references: [id])
   brandId           String
 }
 
