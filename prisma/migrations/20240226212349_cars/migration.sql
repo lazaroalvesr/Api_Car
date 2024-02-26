@@ -1,8 +1,8 @@
 -- CreateEnum
-CREATE TYPE "CategoryProps" AS ENUM ('Picape', 'Sedan', 'SUV', 'Eletrico', 'Hibrido', 'UtilitarioEsportivo', 'Hatchback', 'Van_Utilitario');
+CREATE TYPE "CategoryProps" AS ENUM ('Picape', 'Sedan', 'SUV', 'Eletrico', 'Hibrido', 'Utilitario_Esportivo', 'Hatchback', 'Van_Utilitario');
 
 -- CreateEnum
-CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Tesla', 'Fiat', 'Caoa_Chery', 'Byd', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
+CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Tesla', 'Fiat', 'Caoa_Chery', 'Byd', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac_Motors', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini_Cooper', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
 
 -- CreateEnum
 CREATE TYPE "CambioEnun" AS ENUM ('Automatico', 'Manual');
@@ -27,9 +27,10 @@ CREATE TABLE "Car" (
     "Combustivel" "CombustivelEnun"[],
     "FinalDaPlaca" TEXT,
     "cor" TEXT,
+    "Blindado" "Select",
     "AceitaTroca" "Select"[],
     "Garantia_De_Fabrica" "Select",
-    "IPVAPAGO" "Select",
+    "IPVA_PAGO" "Select",
     "Licenciado" "Select",
     "Price" TEXT NOT NULL,
     "vehicleItems" TEXT NOT NULL,

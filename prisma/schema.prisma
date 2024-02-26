@@ -14,7 +14,7 @@ enum CategoryProps {
   SUV
   Eletrico
   Hibrido
-  UtilitarioEsportivo
+  Utilitario_Esportivo
   Hatchback
   Van_Utilitario
 }
@@ -35,7 +35,7 @@ enum BrandProps {
   Nissan
   Peugeot
   Chevrolet
-  Jac
+  Jac_Motors
   Land_Rover
   Mercedes
   Mitsubishi
@@ -48,7 +48,7 @@ enum BrandProps {
   Lexus
   Kia
   Maserati
-  Mini
+  Mini_Cooper
   MCLaren
   Jaguar
   Haval
