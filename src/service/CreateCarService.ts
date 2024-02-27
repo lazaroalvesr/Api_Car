@@ -4,11 +4,11 @@ import { prisma } from "../prisma/prisma";
 const categoryMap: Record<string, string> = {
   Picape: "d4ec1063-9e4b-4c59-ab69-68adb23a1fe1",
   Sedan: "87c95a1b-2f82-4624-88fd-ba0ac88b6fac",
-  SUV: "d2ed2f2c-8113-47fe-9e77-80df7c9b2bfe",
+  SUV: "b833940c-7a6d-49b6-a853-40b78ca01360",
   Eletrico: "0f1b0279-d66e-4dbb-b5c2-ee38773cdc4c",
   Hibrido: "546cd1b7-c8ac-4425-9fe9-dbd445d0032b",
   UtilitarioEsportivo: "4b23c106-0824-4a1c-be0a-ac36e7487666",
-  Hatchback: "b593da14-82c2-4642-8036-b82146e1cdce",
+  Hatchback: "b1bda791-6d9c-4c36-b0a8-403c56884976",
   Van_Utilitario: "f573d62c-7f88-4222-b963-caf62223fcb0",
 };
 
