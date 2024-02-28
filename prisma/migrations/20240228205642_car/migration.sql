@@ -5,7 +5,7 @@ CREATE TYPE "CategoryProps" AS ENUM ('Picape', 'Sedan', 'SUV', 'Eletrico', 'Hibr
 CREATE TYPE "BrandProps" AS ENUM ('Toyota', 'Honda', 'Volkswagen', 'Hyundai', 'Tesla', 'Fiat', 'Caoa_Chery', 'Byd', 'Bmw', 'Renault', 'Jeep', 'Ram', 'Nissan', 'Peugeot', 'Chevrolet', 'Jac_Motors', 'Land_Rover', 'Mercedes', 'Mitsubishi', 'Volvo', 'Rolls_Royce', 'Subaru', 'Porsche', 'Suzuki', 'Mercedes_AMG', 'Lexus', 'Kia', 'Maserati', 'Mini_Cooper', 'MCLaren', 'Jaguar', 'Haval', 'Audi', 'Citroen', 'Ford', 'Aston_Martin');
 
 -- CreateEnum
-CREATE TYPE "CambioEnun" AS ENUM ('Automatico', 'Manual');
+CREATE TYPE "CambioEnun" AS ENUM ('CVT', 'Automatico', 'Manual');
 
 -- CreateEnum
 CREATE TYPE "CombustivelEnun" AS ENUM ('Gasolina_E_Alcool', 'Alcool', 'Diesel', 'Eletrico', 'Hibrido', 'Gasolina');
@@ -16,7 +16,9 @@ CREATE TYPE "Select" AS ENUM ('Sim', 'Nao');
 -- CreateTable
 CREATE TABLE "Car" (
     "id" TEXT NOT NULL,
-    "linkImg" TEXT NOT NULL,
+    "linkBanner" TEXT NOT NULL,
+    "linkImg" TEXT,
+    "linkImg2" TEXT,
     "name" TEXT NOT NULL,
     "model" TEXT NOT NULL,
     "City" TEXT NOT NULL,
@@ -53,6 +55,7 @@ CREATE TABLE "Category" (
 -- CreateTable
 CREATE TABLE "Brand" (
     "id" TEXT NOT NULL,
+    "linkImg" TEXT NOT NULL,
     "brand" "BrandProps"[],
 
     CONSTRAINT "Brand_pkey" PRIMARY KEY ("id")

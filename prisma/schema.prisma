@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 enum CategoryProps {
@@ -80,7 +79,9 @@ enum Select {
 
 model Car {
   id                  String            @id @default(uuid())
-  linkImg             String
+  linkBanner          String
+  linkImg             String?
+  linkImg2            String?
   name                String
   model               String
   City                String
@@ -113,7 +114,8 @@ model Category {
 }
 
 model Brand {
-  id    String       @id @default(uuid())
-  brand BrandProps[]
-  cars  Car[]
+  id      String       @id @default(uuid())
+  linkImg String
+  brand   BrandProps[]
+  cars    Car[]
 }

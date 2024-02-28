@@ -5,7 +5,9 @@ import { CambioEnun, CombustivelEnun, Select } from "@prisma/client";
 class CreateCarController {
   async handle(req: FastifyRequest, rep: FastifyReply) {
     const {
+      linkBanner,
       linkImg,
+      linkImg2,
       name,
       model,
       City,
@@ -28,7 +30,9 @@ class CreateCarController {
       NomeDoVendedor,
       Whatsapp,
     } = req.body as {
+      linkBanner: string;
       linkImg: string;
+      linkImg2: string;
       name: string;
       model: string;
       City: string;
@@ -54,7 +58,9 @@ class CreateCarController {
 
     const create = new CreateCarService();
     const createCar = await create.execute({
+      linkBanner,
       linkImg,
+      linkImg2,
       name,
       model,
       City,

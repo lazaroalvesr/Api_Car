@@ -88,7 +88,9 @@ const getBrandByName = async (brandName: string) => {
 };
 
 interface CreateCarProps {
+  linkBanner: string;
   linkImg: string;
+  linkImg2: string;
   name: string;
   model: string;
   City: string;
@@ -114,7 +116,9 @@ interface CreateCarProps {
 
 class CreateCarService {
   async execute({
+    linkBanner,
     linkImg,
+    linkImg2,
     name,
     model,
     City,
@@ -144,7 +148,9 @@ class CreateCarService {
 
       const createCar = await prisma.car.create({
         data: {
+          linkBanner,
           linkImg,
+          linkImg2,
           name,
           model,
           description,
