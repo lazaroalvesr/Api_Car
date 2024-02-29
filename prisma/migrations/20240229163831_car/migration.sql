@@ -47,6 +47,7 @@ CREATE TABLE "Car" (
 -- CreateTable
 CREATE TABLE "Category" (
     "id" TEXT NOT NULL,
+    "linkImg" TEXT NOT NULL,
     "categoria" "CategoryProps"[],
 
     CONSTRAINT "Category_pkey" PRIMARY KEY ("id")

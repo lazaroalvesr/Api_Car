@@ -10,6 +10,8 @@ import { DeleteCarController } from "./controller/DeleteCarController";
 import { FindUniqueController } from "./controller/FindUniqueController";
 import { ListCategoryAllController } from "./controller/ListCategoryAllControler";
 import { ListBrandAllController } from "./controller/ListBrandAllController";
+import { FindUniqueCategoryController } from "./controller/FindUniqueCategoryController";
+import { FindUniqueBrandController } from "./controller/FindUniqueBrandController";
 
 export const routes = async (
   fastify: FastifyInstance,
@@ -30,12 +32,17 @@ export const routes = async (
     }
   );
 
-  fastify.get(
-    "/brandAll",
-    async (req: FastifyRequest, rep: FastifyReply) => {
-      return new ListBrandAllController().handle(req, rep);
-    }
-  );
+  fastify.get("/category", async (req: FastifyRequest, rep: FastifyReply) => {
+    return new FindUniqueCategoryController().handle(req, rep);
+  });
+
+  fastify.get("/brandAll", async (req: FastifyRequest, rep: FastifyReply) => {
+    return new ListBrandAllController().handle(req, rep);
+  });
+
+  fastify.get("/brand", async (req: FastifyRequest, rep: FastifyReply) => {
+    return new FindUniqueBrandController().handle(req, rep);
+  });
 
   fastify.get("/unique", async (req: FastifyRequest, rep: FastifyReply) => {
     return new FindUniqueController().handle(req, rep);

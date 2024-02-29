@@ -109,6 +109,7 @@ model Car {
 
 model Category {
   id        String          @id @default(uuid())
+  linkImg   String
   categoria CategoryProps[]
   cars      Car[]
 }
