@@ -22,8 +22,8 @@ class FindUniqueBrandService {
       },
     });
 
-    return idRequire
+    return idRequire;
   }
 }
 
-export {FindUniqueBrandService}
+export { FindUniqueBrandService };
