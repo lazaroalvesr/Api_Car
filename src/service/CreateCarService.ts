@@ -2,7 +2,7 @@ import { CambioEnun, CombustivelEnun, Select } from "@prisma/client";
 import { prisma } from "../prisma/prisma";
 
 const categoryMap: Record<string, string> = {
-  Picape: "d4ec1063-9e4b-4c59-ab69-68adb23a1fe1",
+  Picape: "79fe328d-0624-43f0-a375-fe15d160ab16",
   Sedan: "87c95a1b-2f82-4624-88fd-ba0ac88b6fac",
   SUV: "b833940c-7a6d-49b6-a853-40b78ca01360",
   Eletrico: "0f1b0279-d66e-4dbb-b5c2-ee38773cdc4c",
@@ -18,7 +18,7 @@ const brandMap: Record<string, string> = {
   Volkswagen: "9ffd3e8a-8870-46af-863f-331c9ecf6478",
   HYUNDAI: "b5fa5cdb-3bf8-43ab-b4c8-42db1ad7b900",
   Tesla: "943b3556-a398-40c4-b903-0bc843cb2e96",
-  FIAT: "bdfff36a-de6f-4694-9b99-2b9a39058378",
+  FIAT: "d3522247-d2f6-4c4f-ac9f-a8c81392d8ba",
   CAOA_Chery: "8255eaa5-4e8f-4502-8a27-ca25778e9f3c",
   BYD: "0fb8cbd1-ce15-4b60-867f-6def73c842ce",
   BMW: "d5a184ac-ed39-420d-aa06-9ee28bef0ea7",
