@@ -10,6 +10,9 @@ class FindUniqueCategoryService {
       where: {
         id,
       },
+      include: {
+        cars: true,
+      },
     });
 
     if (!findId) {

@@ -10,6 +10,9 @@ class FindUniqueBrandService {
       where: {
         id,
       },
+      include: {
+        cars: true,
+      },
     });
 
     if (!idRequire) {
